@@ -1,0 +1,20 @@
+<h1>Reiseberichte von unseren Kunden</h1>
+
+<div class="d-flex flex-wrap justify-content-around">
+    <div  class="col-lg-3 col-md-6 mt-3 offerCard" *ngFor="let i of blog; index as ID"> 		
+        <h3>{{ i.destination }}</h3>
+    	<div>
+    		<img class="img-fluid img-thumbnail" src="{{i.img}}" alt="">
+    	</div>
+        <div class="content">
+            <div>
+                <p>{{ i.experience }}</p>                   
+            </div> 
+            <div>
+                <p>Start: {{i.start}}</p>                     
+                <p>Duration: {{i.duration}}</p>                    
+                <p>Kunde: {{i.name}}</p>                    
+            </div>
+        </div> 
+    </div>
+</div>

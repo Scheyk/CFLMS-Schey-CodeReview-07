@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'navbar',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.sass']
+})
+export class NavComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

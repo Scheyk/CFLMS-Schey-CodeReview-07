@@ -1,0 +1,28 @@
+<div class="d-flex flex-wrap justify-content-around m-2">
+	<div  class="col-lg-4 col-md-6 mt-3 offerCard" *ngFor="let i of offers; index as ID">  		
+        <h3>                
+            <a [routerLink]="['/offers', ID]">
+                {{ i.destination }}
+            </a>                
+        </h3>
+    	<div>
+    		<img class="img-fluid img-thumbnail" src="{{i.img}}" alt="">
+    	</div>
+        <div class="content">
+            <div>
+                <p *ngIf="i.description">{{ i.description }}</p>                
+            </div> 
+            <div>
+                <p *ngIf="i.start_s">Start's: {{ i.start_s }}</p>                    
+                <p *ngIf="i.duration">Duration: {{ i.duration }}</p>                    
+                <p *ngIf="i.price">Price ab: {{ i.price }}</p>
+            </div>
+        </div>
+        <div class="d-flex justify-content-around klick">
+            <p>
+                <a [routerLink]="['/offers', ID]">More</a>
+            </p>
+            <p (click)="addTo(offer)">Warenkorb</p>
+        </div>
+    </div>
+</div>

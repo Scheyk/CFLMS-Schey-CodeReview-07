@@ -1,0 +1,27 @@
+<h2>Your travel wish</h2>
+
+<div class="infos" *ngIf="offer">
+    <h3>{{offer.destination}}</h3>
+    <div>
+        <img class="img-fluid img-thumbnail" src="{{offer.img}}" alt="">
+    </div>
+    <p>
+        {{offer.description}}
+    </p>
+    <p>
+        Start's: {{offer.start_s}}
+    </p>            
+    <p>
+        Duration: {{offer.duration}}
+    </p>           
+    <p>
+        Price: {{offer.price}}
+    </p>
+    <p>
+       Zusatzinfo: {{offer.zusatz}} 
+    </p>
+    <div class="d-flex justify-content-around klicker">
+        <p (click)="addTo(offer)">Warenkorb</p>
+        <p routerLink='/travels'>Travels</p>
+    </div>    
+</div>

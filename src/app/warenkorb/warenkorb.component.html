@@ -1,0 +1,73 @@
+<h4>Deine ausgewählte/n Buchungen:<h4>
+
+  <!--container "warenkorb" start-->
+  <div class="cart-item set" *ngFor="let i of items">    
+      <p class="h2">
+        {{i.destination}}
+      </p> 
+      <div>
+        <img class="img-fluid img-thumbnail" src="{{i.img}}" alt="">
+      </div> 
+      <p>
+        {{i.description}}
+      </p> 
+      <p>
+        Start's: {{ i.start_s }}
+      </p> 
+      <p>
+        Duration: {{ i.duration }}
+      </p> 
+      <p>
+        Price ab: {{ i.price}}
+      </p>      
+  </div>  
+  <!--container "warenkorb" end-->
+  <div>
+    <p ></p>
+  </div>
+  <!--container Formular start-->
+  <div class="form">
+    <h5>Wenn Sie Ihre Reise buchen möchten oder einfach nur kontakt mit uns aufnehmen möchten, dann füllen Sie bitte das unten stehende Formular aus.</h5>
+    <form [formGroup]="toPay" (ngSubmit)="onSubmit(toPay.value)">
+      <div>
+        <label for="name">
+          Name:
+        </label>
+        <br>
+        <input id="name" type="text" formControlName="name">
+      </div>
+      <div>
+        <label for="strasse">
+          Strasse:
+        </label>
+        <br>
+        <input id="strasse" type="text" formControlName="strasse">
+      </div>
+      <div>
+        <label for="plz">
+          PLZ:
+        </label>
+        <br>
+        <input id="plz" type="text" formControlName="plz">
+      </div>
+      <div>
+        <label for="ort">
+          Ort:
+        </label>
+        <br>
+        <input id="ort" type="text" formControlName="ort">
+      </div>
+      <div>
+        <label for="msg">
+          Zusatzinfos für uns:
+        </label>
+        <br>
+        <textarea id="msg" type="text" formControlName="msg" rows="10" cols="30"></textarea>        
+      </div>
+      <br>
+      <button class="btn" type="submit">Senden</button>
+    </form>
+  </div>
+  <!--container Formular end-->
+
+
